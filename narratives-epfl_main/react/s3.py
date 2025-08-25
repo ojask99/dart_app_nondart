@@ -11,7 +11,7 @@ s3 = boto3.client(
 )
 
 # Bucket name from secrets
-BUCKET = st.secrets["AWS_BUCKET"]
+BUCKET = st.secrets["S3_BUCKET"]
 
 def read_json_from_s3(filename):
     """Download JSON from S3 (returns list/dict)."""
