@@ -1,20 +1,17 @@
 import boto3
 import json
-import os
-from dotenv import load_dotenv
+import streamlit as st
 
-# Load environment variables from .env file
-load_dotenv("../.env")
-
-# Connect to S3 using dotenv variables
+# Connect to S3 using st.secrets
 s3 = boto3.client(
     "s3",
-    aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
-    aws_secret_access_key=os.getenv("AWS_SECRET_KEY"),
-    region_name=os.getenv("AWS_REGION")
+    aws_access_key_id=st.secrets["AWS_ACCESS_KEY"],
+    aws_secret_access_key=st.secrets["AWS_SECRET_KEY"],
+    region_name=st.secrets["AWS_REGION"]
 )
 
-BUCKET = 'nondart-app-storage'
+# Bucket name from secrets
+BUCKET = st.secrets["AWS_BUCKET"]
 
 def read_json_from_s3(filename):
     """Download JSON from S3 (returns list/dict)."""
