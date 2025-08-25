@@ -146,7 +146,12 @@ if not st.session_state.started and st.session_state.student_id and st.session_s
 # Step 2: Show PDF only after start
 if st.session_state.started and not st.session_state.finished:
     st.write("Scroll through the PDF below 👇")
-    pdf_viewer("C:/Python/narratives-epfl nondart/narratives-epfl_main/dart_exp2.pdf")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.abspath(os.path.join(current_dir, "..", "..", ".."))
+    pdf_path = os.path.join(root_dir, "dart_exp2.pdf")
+
+    pdf_viewer(pdf_path)
+
 
     if st.button("Finish Reading"):
         st.session_state.end_time = time.time()

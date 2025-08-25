@@ -13,7 +13,6 @@ narratives_venv/
 
 # Docs
 *.docx
-*.pdf
 
 # JSON data files
 *.json
