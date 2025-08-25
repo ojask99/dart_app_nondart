@@ -147,7 +147,7 @@ if not st.session_state.started and st.session_state.student_id and st.session_s
 if st.session_state.started and not st.session_state.finished:
     st.write("Scroll through the PDF below 👇")
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    root_dir = os.path.abspath(os.path.join(current_dir, "..", "..", ".."))
+    root_dir = os.path.abspath(os.path.join(current_dir, "..", ".."))
     pdf_path = os.path.join(root_dir, "dart_exp2.pdf")
 
     pdf_viewer(pdf_path)
