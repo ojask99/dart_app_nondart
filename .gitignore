@@ -1,0 +1,20 @@
+# Ignore all .pyc files anywhere in the project
+**/*.pyc
+
+# Ignore all __pycache__ directories and their contents
+**/__pycache__/
+
+narratives_venv/
+
+*.docxs
+**/myenv
+
+**/.env
+narratives-epfl_main/.env
+C:/Python/narratives-epfl 2/narratives-epfl/narratives-epfl_main/.env
+*.pdf
+*.json
+**/expel_agent
+**/reflexion_agent
+**/reinvoke
+kahn.py
